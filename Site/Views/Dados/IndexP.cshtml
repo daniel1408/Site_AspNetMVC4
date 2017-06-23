@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Site.Models.Prato>
+
+@{
+    ViewBag.Title = "IndexP";
+}
+
+<h2>IndexP</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Novo", "CadastrarP")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.preco)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditarP", new { id=item.idP }) |
+            @Html.ActionLink("Excluir", "ExcluirP", new {id = item.idP })
+        </td>
+    </tr>
+}
+
+</table>

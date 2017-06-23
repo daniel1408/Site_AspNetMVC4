@@ -1,0 +1,44 @@
+﻿CREATE TABLE [dbo].[Prato]
+(
+	[IdP] INT NOT NULL PRIMARY KEY,
+	[Prato] VARCHAR(50) NOT NULL,
+	[PRECO] FLOAT NOT NULL,
+	[IdR] INT NOT NULL FOREIGN KEY (IdR) REFERENCES Restaurante(IdR)
+)
+
+CREATE TABLE [dbo].[Restaurante]
+(
+	[IdR] INT NOT NULL PRIMARY KEY,
+	[NomeR] VARCHAR(50) NOT NULL
+)
+
+
+SELECT
+            SqlConnection conexao = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Daniel Costa\Documents\DB.mdf; Integrated Security = True; Connect Timeout = 30");
+            
+            conexao.Open();
+            
+            string teste = "Select * from Restaurante";
+            SqlCommand comando = new SqlCommand(teste, conexao);
+            SqlDataReader dados = comando.ExecuteReader();
+            
+            while (dados.Read())
+                Console.WriteLine("IDR{0}, Nome{1}",dados["IdR"], dados["Nome"]);
+
+
+UPDATE
+			SqlConnection conexao = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Daniel Costa\Documents\DB.mdf; Integrated Security = True; Connect Timeout = 30");
+            conexao.Open();
+            
+            string teste = "Update Prato set Nome = 'Sollar da Praça' where IdR=1";
+            SqlCommand comando = new SqlCommand(teste, conexao);
+            comando.ExecuteNonQuery();
+
+
+UPDATE
+			SqlConnection conexao = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Daniel Costa\Documents\DB.mdf; Integrated Security = True; Connect Timeout = 30");
+            conexao.Open();
+            
+            string teste = "delete from Restaurante where IdR=1";
+            SqlCommand comando = new SqlCommand(teste, conexao);
+            comando.ExecuteNonQuery();

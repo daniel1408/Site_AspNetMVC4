@@ -1,0 +1,60 @@
+﻿@model Site.Models.Prato
+
+@{
+    ViewBag.Title = "CadastrarP";
+}
+
+<h2>Cadastro de Pratos</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                <b>Restaurante Pertencente</b>
+            </div>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idR, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idR, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                <b>Nome do Prato</b>
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.prato, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.prato, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class = "control-label col-md-2">
+                <b>Preço do Prato</b>
+            </div>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.preco, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.preco, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "IndexP")
+</div>

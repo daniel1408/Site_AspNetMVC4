@@ -1,0 +1,125 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#menu{
+	
+	background-color: #000000;
+	color: white;
+	text-align: center;	
+	box-shadow: 1px 1px 2px #333333;    
+	height:36px;
+
+}
+
+#menu ul{
+	padding: 7px;
+}
+
+#menu ul li{
+	display:inline;
+	list-style:none;
+	padding:2px 7px;
+	margin: 5px;
+}
+
+#menu ul li a{
+	text-decoration:none; 
+	color: white;
+	margin: 7px;
+}
+
+#menu ul li a:hover{
+	background-color:white;
+	color:black;
+	font-weight: bold;
+}
+
+#botoes{
+    display:inline-flex;
+}
+
+
+.slider{
+
+	width:800px;
+	margin: auto;
+	overflow:hidden;
+	margin-top: 20px;
+}
+
+.slider ul{
+	
+	display: flex;
+	width: 400%;
+	margin-top: 5px;
+
+	animation: cambio;
+	animation-duration: 35s;
+	animation-iteration-count: infinite;
+}
+
+.slider li{
+	width: 100%;
+	list-style: none;
+}
+
+.slider img{
+	width: 100%;
+
+}
+
+@keyframes cambio{
+
+	0% {
+	     margin-left: 0%;
+	}
+
+	25% {
+	     margin-left: -100%;
+	}
+	50% {
+	     margin-left: -200%;
+	}
+	75% {
+	     margin-left: -300%;
+	}
+	100% {
+	     margin-left: 0%;
+	}
+}
+
+input[type=text]{     	
+
+	border-radius:5px;
+        background: #ffffff;
+	width:470px;
+	height:32px;
+}
+input[type=text]:hover, textarea:hover{ 
+	background:black;
+	color: white;
+}
+
+input[type=submit]{
+        background:black;
+        color:#ffffff;
+}
+input[type=button]{
+        background:black;
+        color:#ffffff;
+}

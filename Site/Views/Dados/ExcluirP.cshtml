@@ -1,0 +1,56 @@
+﻿@model Site.Models.Prato
+
+@{
+    ViewBag.Title = "ExcluirP";
+}
+
+<h2>ExcluirP</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Prato</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Codigo: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idP)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Restaurante: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idR)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Nome: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prato)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Preço: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preco)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "IndexP")
+        </div>
+    }
+</div>

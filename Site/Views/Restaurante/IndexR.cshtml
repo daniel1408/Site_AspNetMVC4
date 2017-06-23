@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Site.Models.Restaurante>
+
+@{
+    ViewBag.Title = "IndexR";
+}
+
+<h2>IndexR</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Novo", "CadastrarR")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditarR", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Excluir", "ExcluirR", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

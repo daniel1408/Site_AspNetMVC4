@@ -1,0 +1,39 @@
+﻿@model Site.Models.Restaurante
+
+@{
+    ViewBag.Title = "ExcluirR";
+}
+
+<h2>Excluir Restaurante</h2>
+
+<h4>Deseja realmente excluir o seguinte restaurante?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Codigo: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idR)
+        </dd>
+        
+        <dt>
+            @Html.DisplayName("Nome: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "IndexR")
+        </div>
+    }
+</div>
